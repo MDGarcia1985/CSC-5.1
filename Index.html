@@ -1,0 +1,101 @@
+<!--Michael Garcia-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>VERA: Viking Emergency Response App</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+  <!-- Home Page -->
+  <div id="home-page">
+    <h1>Viking Emergency Response App</h1>
+    
+    <nav id="menu-nav">
+      <button id="menu-button" onclick="toggleMenu()">Menu</button>
+      <div class="menu-items" id="menu-items">
+        <button onclick="navigateToPage('home-page')">Home</button>
+        <button onclick="navigateToPage('policy-page')">Policy and Procedures</button>
+        <button onclick="navigateToPage('safety-team-page')">My Safety Team</button>
+        <button onclick="navigateToPage('maps-page')">Maps</button>
+        <!-- Add buttons for the other pages here -->
+      </div>
+    </nav>
+
+    <!-- Big Red Help Button -->
+    <button id="help-button" onclick="confirmHelp()"><img src="help-hi.png" alt="Help"></button>
+
+    <!-- Settings Button -->
+    <nav id="settings-button">
+      <button onclick="navigateToPage('profile-page')">
+        <img src="gear-clipart-gearRed.png" alt="Settings">
+      </button>
+    </nav>
+  </div>
+
+  <!-- Policy and Procedures Page -->
+  <div id="policy-page" style="display: none;">
+    <h1>Policy and Procedures</h1>
+    <button onclick="navigateToPage('home-page')">Home</button>
+    <button onclick="navigateToPage('emergency-response-guide')">Emergency Response Guide</button>
+    <!-- Add content specific to the policy and procedures page -->
+  </div>
+
+  <!-- My Safety Team Page -->
+  <div id="safety-team-page" style="display: none;">
+    <h1>My Safety Team</h1>
+    <button onclick="navigateToPage('home-page')">Home</button>
+    <!-- Add content specific to the safety team page -->
+  </div>
+
+  <!-- Maps Page -->
+  <div id="maps-page" style="display: none;">
+    <h1>Maps</h1>
+    <button onclick="navigateToPage('home-page')">Home</button>
+    <button onclick="navigateToPage('report-an-incident')">Report an Incident</button>
+    <!-- Add content specific to the maps page -->
+  </div>
+
+<!-- Profile Setup Page -->
+<div id="profile-page" style="display: none;">
+  <h1>Profile Setup</h1>
+  <button onclick="navigateToPage('home-page')">Home</button>
+  <form id="profile-form" onsubmit="saveProfile(event)">
+    <table>
+      <tr>
+        <td><label for="full-name">Full Name:</label></td>
+        <td><input type="text" id="full-name" name="full-name" required></td>
+      </tr>
+      <tr>
+        <td><label for="contact-info">Contact Information:</label></td>
+        <td><input type="text" id="contact-info" name="contact-info" required></td>
+      </tr>
+      <tr>
+        <td><label for="password">Password:</label></td>
+        <td><input type="password" id="password" name="password" required></td>
+      </tr>
+    </table>
+
+    <button type="submit">Save</button>
+  </form>
+
+  <!-- User Table -->
+  <table id="user-table">
+    <thead>
+      <tr>
+        <th>Full Name</th>
+        <th>Contact Information</th>
+        <th>Password</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Existing table rows, if any -->
+    </tbody>
+  </table>
+</div>
+
+  <!-- Audio Element for Siren Sound -->
+  <audio id="siren-sound" src="siren.mp3"></audio>
+
+  <script src="app.js"></script>
+</body>
+</html>
